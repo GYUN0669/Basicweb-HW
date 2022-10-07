@@ -16,7 +16,6 @@ Read my basic web class kakao homework
 - 스터디를 관리할 수 있는 기능을 제공해, 스터디원들의 스터디 참여율과 진행상황을 공유 할 수 있어 스터디 관리를 계획적으로 할 수 있도록 한다.
 - 또한 이를 통해 스터디원끼리 공부 자극을 주어 다 같이 스터디 목표치를 완료하도록 한다.
 -<https://github.com/antudy/antudy.git>
----
 
 # 현재 공부중인 언어
 - React Native
