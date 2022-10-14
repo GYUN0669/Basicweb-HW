@@ -15,17 +15,23 @@ public class rigid_body : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Onput.Getkey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
             GetComponent<Rigidbody>().AddForce(Vector3.forward * power * Time.deltaTime);
-        if (Onput.Getkey(KeyCode.DownArrow))
+
+        if (Input.GetKey(KeyCode.DownArrow))
             GetComponent<Rigidbody>().AddForce(Vector3.back * power * Time.deltaTime);
-        if (Onput.Getkey(KeyCode.LeftArrow))
+
+        if (Input.GetKey(KeyCode.LeftArrow))
             GetComponent<Rigidbody>().AddForce(Vector3.left * power * Time.deltaTime);
-        if (Onput.Getkey(KeyCode.RightArrow))
+
+        if (Input.GetKey(KeyCode.RightArrow))
             GetComponent<Rigidbody>().AddForce(Vector3.right * power * Time.deltaTime);
-        if (Onput.Getkey(KeyCode.U))
+
+        if (Input.GetKey(KeyCode.U))
             GetComponent<Rigidbody>().AddForce(Vector3.up * power * Time.deltaTime);
-        if (Onput.Getkey(KeyCode.D))
+
+        if (Input.GetKey(KeyCode.D))
             GetComponent<Rigidbody>().AddForce(Vector3.down * power * Time.deltaTime);
+
     }
 }
