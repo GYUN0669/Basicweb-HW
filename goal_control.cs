@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class goal_control : MonoBehaviour
 {   
     private bool is_collided = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        float rnd1 = Random.Range(5.0f, 10.0f);
+        float rnd2 = Random.Range(-3.0f, 1.0f);
+        this.transform.position += new Vector3(rnd1, rnd2, 0);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+     
     }
     void OnCollisionStay(Collision other)
     {
