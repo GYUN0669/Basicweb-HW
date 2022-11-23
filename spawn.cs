@@ -12,14 +12,15 @@ public class spawn : MonoBehaviour
     {
         while (true)
         {
+            
             Instantiate(pf_wall, transform.position, transform.rotation);
-            yield return new WaitForSeconds(interval);
+            yield return new WaitForSeconds(Random.Range(1.0f,2.0f)); //벽이 생성되는 주기를 랜덤하게 변경
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+  
     }
 }
