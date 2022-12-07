@@ -4,31 +4,41 @@ using UnityEngine;
 
 public class RoosterGenerator : MonoBehaviour
 {
-    private float currTime;
-    public GameObject Monster;
-    // Start is called before the first frame update
-    void Start()
+    public GameObject rangeObject;
+    BoxCollider rangeCollider;
+    public GameObject capsul;
+
+    private void Start()
     {
-        
+        StartCoroutine(RandomRespawn_Coroutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator RandomRespawn_Coroutine()
     {
-        currTime += Time.deltaTime;
-        if (currTime > 5)
+        while (true)
         {
-            // x,y,z 좌표값을 각각 다른 범위에서 랜덤하게 정해지도록 만들었다.
-            float newX = Random.Range(-3f, 3f), newZ = Random.Range(0f, 5f);
+            yield return new WaitForSeconds(1f);
 
-            // 생성할 오브젝트를 불러온다.
-            GameObject monster = Instantiate(Monster);
-
-            // 불러온 오브젝트를 랜덤하게 생성한 좌표값으로 위치를 옮긴다.
-            Monster.transform.position = new Vector3(newX, 0, newZ);
-
-            // 시간을 0으로 되돌려주면, 5초마다 반복된다.
-            currTime = 0;
+            // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
+            GameObject instantCapsul = Instantiate(capsul, Return_RandomPosition(), Quaternion.identity);
         }
+    }
+
+    private void Awake()
+    {
+        rangeCollider = rangeObject.GetComponent<BoxCollider>();
+    }
+
+    Vector3 Return_RandomPosition()
+    {
+        Vector3 originPosition = rangeObject.transform.position;
+        // 콜라이더의 사이즈를 가져오는 bound.size 사용
+        float range_X = rangeCollider.bounds.size.x;
+
+        range_X = Random.Range((range_X / 2) * -1, range_X / 2);
+        Vector3 RandomPostion = new Vector3(range_X, 0f, 0f);
+
+        Vector3 respawnPosition = originPosition + RandomPostion;
+        return respawnPosition;
     }
 }
