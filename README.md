@@ -19,3 +19,7 @@ Read my basic web class kakao homework
 # 현재 공부중인 언어
 - React Native
 - Js
+
+# Github Blog
+- Jekyll 블로그: <https://gyun0669.github.io/>  
+- bootstrap 포트폴리오: <https://gyun0669.github.io/Blog/>    
